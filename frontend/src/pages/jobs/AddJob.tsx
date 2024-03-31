@@ -15,9 +15,9 @@ import httpModule from "../../helpers/http.module";
 const levelsArray: string[] = [
   "Intern",
   "Junior",
-  "MidLevel",
+  "Mid Level",
   "Senior",
-  "TeamLead",
+  "Team Lead",
 ];
 
 const AddJob = () => {
