@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class JobController : ControllerBase
     {
         private ApplicationDbContext _context { get; }
