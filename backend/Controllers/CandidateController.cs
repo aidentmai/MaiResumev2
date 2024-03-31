@@ -62,7 +62,7 @@ namespace backend.Controllers
         [HttpGet("Get")]
         public async Task<ActionResult<IEnumerable<CandidateGetDto>>> GetCandidates()
         {
-            var candidates = await _context.Candidates.Include(c => c.Job).ToListAsync();
+            var candidates = await _context.Candidates.Include(c => c.Job).OrderByDescending(q => q.CreatedAt).ToListAsync();
             var convertedCandidates = _mapper.Map<IEnumerable<CandidateGetDto>>(candidates);
 
             if(convertedCandidates == null)
