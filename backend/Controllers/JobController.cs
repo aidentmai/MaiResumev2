@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class JobController : ControllerBase
     {
         private ApplicationDbContext _context { get; }
@@ -43,7 +45,7 @@ namespace backend.Controllers
         [HttpGet("Get")]
         public async Task<ActionResult<IEnumerable<JobGetDto>>> GetJobs()
         {
-            var jobs = await _context.Jobs.Include(job => job.Company).ToListAsync();
+            var jobs = await _context.Jobs.Include(job => job.Company).OrderByDescending(q => q.CreatedAt).ToListAsync();
             var convertedJobs = _mapper.Map<IEnumerable<JobGetDto>>(jobs);
 
             if(convertedJobs == null)

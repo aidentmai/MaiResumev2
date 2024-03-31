@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-import "./companies.scss";
+import "./jobs.scss";
 import httpModule from "../../helpers/http.module";
-import { ICompany } from "../../types/global.typing";
+import { IJob } from "../../types/global.typing";
 import { Button, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Add } from "@mui/icons-material";
-import CompaniesGrid from "../../components/companies/CompaniesGrid";
+import JobsGrid from "../../components/jobs/JobsGrid";
 
-const Companies = () => {
-  const [companies, setCompanies] = useState<ICompany[]>([]);
+const Jobs = () => {
+  const [jobs, setJobs] = useState<IJob[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const redirect = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     httpModule
-      .get<ICompany[]>("/Company/Get")
+      .get<IJob[]>("/Job/Get")
       .then((response) => {
-        setCompanies(response.data);
+        setJobs(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -27,25 +27,23 @@ const Companies = () => {
       });
   }, []);
 
-  //   console.log(companies);
-
   return (
-    <div className="content companies">
+    <div className="content jobs">
       <div className="heading">
-        <h2>Companies</h2>
-        <Button variant="outlined" onClick={() => redirect("/companies/add")}>
+        <h2>Jobs</h2>
+        <Button variant="outlined" onClick={() => redirect("/jobs/add")}>
           <Add />
         </Button>
       </div>
       {loading ? (
         <CircularProgress size={100} />
-      ) : companies.length === 0 ? (
-        <h1>No Company</h1>
+      ) : jobs.length === 0 ? (
+        <h1>No Job</h1>
       ) : (
-        <CompaniesGrid data={companies} />
+        <JobsGrid data={jobs} />
       )}
     </div>
   );
 };
 
-export default Companies;
+export default Jobs;

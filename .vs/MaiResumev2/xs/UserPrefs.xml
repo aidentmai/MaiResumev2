@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{A0EEC33B-1226-4160-A7FA-3124F743E7D0}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Controllers/CandidateController.cs">
+    <Files>
+      <File FileName="backend/Program.cs" Line="1" Column="1" />
+      <File FileName="backend/Controllers/CandidateController.cs" Line="52" Column="47" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MaiResumev2" expanded="True">
+            <Node name="backend" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Enums" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.backend PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
