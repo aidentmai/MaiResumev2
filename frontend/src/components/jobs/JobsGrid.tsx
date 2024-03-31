@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import moment from "moment";
-import React from "react";
 import { IJob } from "../../types/global.typing";
+import "./jobs-grid.scss";
 
 const column: GridColDef[] = [
   { field: "id", headerName: "ID", width: 100 },

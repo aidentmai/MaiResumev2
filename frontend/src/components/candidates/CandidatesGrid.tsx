@@ -1,10 +1,9 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import moment from "moment";
-import React from "react";
 import { ICandidate } from "../../types/global.typing";
 import { baseUrl } from "../../constants/url";
 import { PictureAsPdf } from "@mui/icons-material";
+import "./candidates-grid.scss"
 
 const column: GridColDef[] = [
   { field: "id", headerName: "ID", width: 100 },
@@ -12,7 +11,7 @@ const column: GridColDef[] = [
   { field: "lastName", headerName: "Last Name", width: 120 },
   { field: "email", headerName: "Email", width: 150 },
   { field: "phone", headerName: "Phone", width: 150 },
-  { field: "coverLetter", headerName: "CV", width: 400 },
+  { field: "coverLetter", headerName: "CV", width: 500 },
 
   {
     field: "resume",
